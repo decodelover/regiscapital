@@ -1,0 +1,11 @@
+Regis Capital Bank Documentation Entry Point
+
+Please use the Markdown documentation for current setup and operations:
+
+- README.md
+- docs/INSTALLATION.md
+- docs/CONFIGURATION.md
+- docs/DEPLOYMENT.md
+- docs/TROUBLESHOOTING.md
+
+Legacy text instructions in this file are deprecated.

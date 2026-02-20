@@ -1,0 +1,169 @@
+APP_DEBUG is set to true while APP_ENV is not local
+
+This could make your application vulnerable to remote execution. Read more about Ignition security.
+
+/home/trademas/domains/securetrustbank.cfd/public_html/
+Illuminate\Database\QueryException
+SQLSTATE[HY000]: General error: 1364 Field 'id' doesn't have a default value (SQL: insert into `notifications` (`user_id`, `title`, `message`, `type`, `icon`, `link`, `data`, `is_read`, `updated_at`, `created_at`) values (5, KYC Verification Approved, Your KYC verification has been reviewed and approved. Your account is now fully verified., success, check-circle, https://securetrustbank.cfd/dashboard/verify-account, ?, 0, 2025-10-16 07:54:31, 2025-10-16 07:54:31))
+https://securetrustbank.cfd/admin/dashboard/processkyc
+Stack trace
+Request
+App
+User
+Context
+Debug
+Share 
+
+
+Expand vendor frames
+77
+vendor/laravel/framework/src/Illuminate/Database/Connection.php
+Illuminate\Database\Connection
+:712
+76
+Illuminate\Database\Connection
+:672
+75
+Illuminate\Database\Connection
+:490
+74
+Illuminate\Database\Connection
+:454
+
+12 vendor frames…
+61
+app/Helpers/NotificationHelper.php
+App\Helpers\NotificationHelper
+:33
+60
+App\Helpers\NotificationHelper
+:63
+59
+App\Http\Controllers\Admin\KycController
+:32
+
+6 vendor frames…
+52
+app/Http/Middleware/TwoFactorVerify.php
+App\Http\Middleware\TwoFactorVerify
+:25
+
+1 vendor frame…
+50
+app/Http/Middleware/EnsureIsAdmin.php
+App\Http\Middleware\EnsureIsAdmin
+:26
+
+1 vendor frame…
+48
+app/Http/Middleware/AppearanceSettingsMiddleware.php
+App\Http\Middleware\AppearanceSettingsMiddleware
+:26
+
+1 vendor frame…
+46
+app/Http/Middleware/BlockIpAddressMiddleware.php
+App\Http\Middleware\BlockIpAddressMiddleware
+:36
+
+44 vendor frames…
+1
+index.php
+:51
+Illuminate\Database\Connection::runQueryCallback
+vendor/laravel/framework/src/Illuminate/Database/Connection.php:712
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     * @throws \Illuminate\Database\QueryException
+
+     */
+
+    protected function runQueryCallback($query, $bindings, Closure $callback)
+
+    {
+
+        // To execute the statement, we'll simply call the callback, which will actually
+
+        // run the SQL against the PDO connection. Then we can calculate the time it
+
+        // took to execute and log the query SQL, bindings and time in our memory.
+
+        try {
+
+            return $callback($query, $bindings);
+
+        }
+
+ 
+
+        // If an exception occurs when attempting to run a query, we'll format the error
+
+        // message to include the bindings with SQL, which will make this exception a
+
+        // lot more helpful to the developer instead of just the database's errors.
+
+        catch (Exception $e) {
+
+            throw new QueryException(
+
+                $query, $this->prepareBindings($bindings), $e
+
+            );
+
+        }
+
+    }
+
+ 
+
+    /**
+
+     * Log a query in the connection's query log.
+
+     *
+
+     * @param  string  $query
+
+     * @param  array  $bindings
+
+     * @param  float|null  $time
+
+     * @return void
+
+     */
+
+    public function logQuery($query, $bindings, $time = null)
+
+    {
+
+
+            
