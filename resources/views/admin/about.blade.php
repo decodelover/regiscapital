@@ -13,9 +13,9 @@
 
                 <div class="mb-5 row">
                     <div class="col-12 text-center p-4 card shadow ">
-                        <h1 class="title1">About Remedy Remedy Grand Bank </h1>
+                        <h1 class="title1">About Regis Capital Bank </h1>
                         <center>BY </center>
-                        <p class="title1">Remedy codes technology</p>
+                        <p class="title1">Regis Capital Bank</p>
                         {{-- <div>
 								<button type="button" class="text-white btn btn-primary btn-sm disabled" disabled>
 								CONTACT US TODAT!!!!
@@ -28,7 +28,7 @@
 
                         <div class="mt-4">
                             <h2>EMAIL US</h2>
-                            <a  class="btn btn-light">remedycodestech@gmail.com</a>
+                            <a  class="btn btn-light">regiscapitalbank@gmail.com</a>
                         </div>
 
 

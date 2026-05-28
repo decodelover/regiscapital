@@ -748,125 +748,95 @@
                         </div>
                     </div>
 
-                    <!-- Menu Title -->
-                    <div class="text-center mb-6">
-                        <h2 class="text-2xl font-bold bg-gradient-to-r from-primary-600 to-indigo-600 bg-clip-text text-transparent">Banking Menu</h2>
-                        <p class="text-sm text-gray-500 mt-1">Select an option to continue</p>
+                    <div class="mb-4 text-center">
+                        <h2 class="text-2xl font-semibold text-gray-900">Navigation</h2>
+                        <p class="mt-1 text-sm text-gray-500">Quick access to your main banking pages</p>
                     </div>
 
-                    <!-- Grid Menu - 3x3 Grid with Modern Professional Design (Mobile Only) -->
-                    <div class="grid grid-cols-3 gap-3.5 md:gap-4">
-                        <!-- Home -->
-                        <a href="{{ route('dashboard') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="home" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Home</span>
-                            </div>
+                    <div class="max-h-[60vh] space-y-2 overflow-y-auto pr-1">
+                        <a href="{{ route('dashboard') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('dashboard') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('dashboard') ? 'bg-primary-100 text-primary-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="home" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Dashboard</span>
                         </a>
 
-                        <!-- Activity -->
-                        <a href="{{ route('accounthistory') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-indigo-400 to-indigo-600 hover:from-indigo-500 hover:to-indigo-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="activity" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Activity</span>
-                            </div>
+                        <a href="{{ route('accounthistory') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('accounthistory') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('accounthistory') ? 'bg-primary-100 text-primary-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="activity" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Transactions</span>
                         </a>
 
-                        <!-- Cards -->
-                        <a href="{{ route('cards') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="credit-card" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Cards</span>
-                            </div>
+                        <a href="{{ route('cards') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('cards*') ? 'bg-primary-50 text-primary-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('cards*') ? 'bg-primary-100 text-primary-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="credit-card" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Cards</span>
                         </a>
 
-                        <!-- Transfer -->
-                        <a href="{{ route('localtransfer') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-emerald-400 to-emerald-600 hover:from-emerald-500 hover:to-emerald-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="arrow-right" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Transfer</span>
-                            </div>
+                        <div class="my-3 border-t border-gray-100"></div>
+
+                        <a href="{{ route('localtransfer') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('localtransfer') ? 'bg-emerald-50 text-emerald-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('localtransfer') ? 'bg-emerald-100 text-emerald-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="send" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Local Transfer</span>
                         </a>
 
-                        <!-- Int'l Wire -->
-                        <a href="{{ route('internationaltransfer') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-cyan-400 to-cyan-600 hover:from-cyan-500 hover:to-cyan-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="globe" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Int'l Wire</span>
-                            </div>
+                        <a href="{{ route('internationaltransfer') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('internationaltransfer') ? 'bg-cyan-50 text-cyan-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('internationaltransfer') ? 'bg-cyan-100 text-cyan-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="globe" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">International Wire</span>
                         </a>
 
-                        <!-- Deposit -->
-                        <a href="{{ route('deposits') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-sky-400 to-sky-600 hover:from-sky-500 hover:to-sky-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="download" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Deposit</span>
-                            </div>
+                        <a href="{{ route('deposits') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('deposits') ? 'bg-sky-50 text-sky-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('deposits') ? 'bg-sky-100 text-sky-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="download" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Deposit</span>
                         </a>
 
-                        <!-- Loan -->
-                        <a href="{{ route('loan') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="percent" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Loan</span>
-                            </div>
+                        <a href="{{ route('loan') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('loan') ? 'bg-orange-50 text-orange-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('loan') ? 'bg-orange-100 text-orange-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="percent" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Loan Request</span>
                         </a>
 
-                        <!-- IRS Refund -->
-                        <a href="{{ route('irs-refund') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-red-400 to-red-600 hover:from-red-500 hover:to-red-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="file-text" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Tax Refund</span>
-                            </div>
+                        <a href="{{ route('irs-refund') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('irs-refund*') ? 'bg-rose-50 text-rose-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('irs-refund*') ? 'bg-rose-100 text-rose-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="file-text" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Tax Refund</span>
                         </a>
 
-                        <!-- Settings -->
-                        <a href="{{ route('profile') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-slate-400 to-slate-600 hover:from-slate-500 hover:to-slate-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="settings" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Settings</span>
-                            </div>
+                        <div class="my-3 border-t border-gray-100"></div>
+
+                        <a href="{{ route('profile') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('profile') ? 'bg-slate-50 text-slate-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('profile') ? 'bg-slate-100 text-slate-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="settings" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Settings</span>
                         </a>
 
-                        <!-- Support -->
-                        <a href="{{ route('support') }}" class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-teal-400 to-teal-600 hover:from-teal-500 hover:to-teal-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="headphones" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Support</span>
-                            </div>
+                        <a href="{{ route('support') }}" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition {{ request()->routeIs('support') ? 'bg-teal-50 text-teal-700' : 'text-gray-700 hover:bg-gray-50' }}">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl {{ request()->routeIs('support') ? 'bg-teal-100 text-teal-600' : 'bg-gray-100 text-gray-500' }}">
+                                <i data-lucide="message-circle" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Support</span>
                         </a>
 
-                        <!-- Logout -->
                         <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault(); document.getElementById('logout-form-grid').submit();"
-                            class="group">
-                            <div class="flex flex-col items-center justify-center rounded-2xl p-4 transition-all duration-300 hover:scale-105 active:scale-95 bg-gradient-to-br from-rose-400 to-rose-600 hover:from-rose-500 hover:to-rose-700 shadow-lg hover:shadow-2xl">
-                                <div class="mb-2">
-                                    <i data-lucide="log-out" class="h-6 w-6 text-white"></i>
-                                </div>
-                                <span class="text-xs font-semibold text-white text-center">Logout</span>
-                            </div>
+                           onclick="event.preventDefault(); document.getElementById('logout-form-grid').submit();"
+                           class="flex items-center gap-3 rounded-2xl px-4 py-3 transition text-rose-600 hover:bg-rose-50">
+                            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-rose-100 text-rose-600">
+                                <i data-lucide="log-out" class="h-5 w-5"></i>
+                            </span>
+                            <span class="flex-1 font-medium">Logout</span>
                         </a>
+
                         <form id="logout-form-grid" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
@@ -874,46 +844,43 @@
                 </div>
             </div>
 
-            <!-- Mobile Navigation Bar - Enhanced Design -->
-            <div class="fixed bottom-0 left-0 right-0 md:hidden z-30">
-                <!-- Main Navigation Bar -->
-                <div class="bg-white border-t border-gray-200 shadow-lg rounded-t-3xl mx-2 mb-1">
-                    <div class="flex justify-between items-center px-6 py-3 relative">
-                        <a href="{{ route('dashboard') }}" class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                                <i data-lucide="home" class="h-5 w-5 {{ request()->routeIs('dashboard') ? 'text-primary-600' : 'text-gray-500' }}"></i>
-                            </div>
-                            <span class="text-xs font-medium {{ request()->routeIs('dashboard') ? 'text-primary-600' : 'text-gray-500' }}">Home</span>
+            <!-- Mobile Navigation Bar - iOS style -->
+            <div class="fixed bottom-0 left-0 right-0 z-30 md:hidden">
+                <div class="mx-2 mb-2 rounded-[28px] border border-white/70 bg-white/85 px-4 py-3 shadow-[0_10px_35px_rgba(15,23,42,0.12)] backdrop-blur-xl">
+                    <div class="flex items-end justify-between gap-2">
+                        <a href="{{ route('dashboard') }}" class="flex flex-1 flex-col items-center justify-center gap-1 text-center">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl {{ request()->routeIs('dashboard') ? 'bg-primary-50 text-primary-600' : 'text-slate-500' }}">
+                                <i data-lucide="home" class="h-5 w-5"></i>
+                            </span>
+                            <span class="text-[11px] font-medium {{ request()->routeIs('dashboard') ? 'text-primary-600' : 'text-slate-500' }}">Home</span>
                         </a>
 
-                        <a href="{{ route('accounthistory') }}" class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                                <i data-lucide="bar-chart-2" class="h-5 w-5 {{ request()->routeIs('accounthistory') ? 'text-primary-600' : 'text-gray-500' }}"></i>
-                            </div>
-                            <span class="text-xs font-medium {{ request()->routeIs('accounthistory') ? 'text-primary-600' : 'text-gray-500' }}">Stats</span>
+                        <a href="{{ route('accounthistory') }}" class="flex flex-1 flex-col items-center justify-center gap-1 text-center">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl {{ request()->routeIs('accounthistory') ? 'bg-primary-50 text-primary-600' : 'text-slate-500' }}">
+                                <i data-lucide="activity" class="h-5 w-5"></i>
+                            </span>
+                            <span class="text-[11px] font-medium {{ request()->routeIs('accounthistory') ? 'text-primary-600' : 'text-slate-500' }}">Activity</span>
                         </a>
 
-                        <!-- Center Button - Floating Action Button -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-0">
-                            <button
-                                @click="mobileMenuOpen = true"
-                                class="bg-gradient-to-r from-primary-600 to-primary-800 w-16 h-16 rounded-full flex items-center justify-center shadow-lg border-4 border-white">
-                                <i data-lucide="grid" class="h-8 w-8 text-white"></i>
-                            </button>
-                        </div>
+                        <button type="button" @click="mobileMenuOpen = true" class="-mt-8 flex flex-1 flex-col items-center justify-center gap-1 text-center">
+                            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-900 text-white shadow-lg ring-4 ring-white">
+                                <i data-lucide="menu" class="h-6 w-6"></i>
+                            </span>
+                            <span class="text-[11px] font-medium text-slate-600">More</span>
+                        </button>
 
-                        <a href="{{ route('cards') }}" class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                                <i data-lucide="credit-card" class="h-5 w-5 {{ request()->routeIs('cards*') ? 'text-primary-600' : 'text-gray-500' }}"></i>
-                            </div>
-                            <span class="text-xs font-medium {{ request()->routeIs('cards*') ? 'text-primary-600' : 'text-gray-500' }}">Cards</span>
+                        <a href="{{ route('cards') }}" class="flex flex-1 flex-col items-center justify-center gap-1 text-center">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl {{ request()->routeIs('cards*') ? 'bg-primary-50 text-primary-600' : 'text-slate-500' }}">
+                                <i data-lucide="credit-card" class="h-5 w-5"></i>
+                            </span>
+                            <span class="text-[11px] font-medium {{ request()->routeIs('cards*') ? 'text-primary-600' : 'text-slate-500' }}">Cards</span>
                         </a>
 
-                        <a href="{{ route('profile') }}" class="flex flex-col items-center">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center">
-                                <i data-lucide="user" class="h-5 w-5 {{ request()->routeIs('profile') ? 'text-primary-600' : 'text-gray-500' }}"></i>
-                            </div>
-                            <span class="text-xs font-medium {{ request()->routeIs('profile') ? 'text-primary-600' : 'text-gray-500' }}">Profile</span>
+                        <a href="{{ route('profile') }}" class="flex flex-1 flex-col items-center justify-center gap-1 text-center">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl {{ request()->routeIs('profile') ? 'bg-primary-50 text-primary-600' : 'text-slate-500' }}">
+                                <i data-lucide="user-round" class="h-5 w-5"></i>
+                            </span>
+                            <span class="text-[11px] font-medium {{ request()->routeIs('profile') ? 'text-primary-600' : 'text-slate-500' }}">Profile</span>
                         </a>
                     </div>
                 </div>
