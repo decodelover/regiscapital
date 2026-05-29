@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: regisbank-app
+    env: docker
+    region: ohio
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: APP_NAME
+        value: RegisCapital
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://regisbank-app.onrender.com
+      - key: DB_CONNECTION
+        value: mysql
+      # Add your database keys here (e.g., from an external Aiven/PlanetScale MySQL or Supabase if using Postgres)
+      - key: DB_HOST
+        value: your-database-host
+      - key: DB_PORT
+        value: 3306
+      - key: DB_DATABASE
+        value: your-database-name
+      - key: DB_USERNAME
+        value: your-db-user
+      - key: DB_PASSWORD
+        sync: false
