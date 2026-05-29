@@ -20,6 +20,7 @@ use App\Http\Controllers\User\TransferController;
 use App\Http\Controllers\User\CardController;
 use App\Http\Controllers\User\NotificationController;
 use App\Http\Controllers\User\IrsRefundController;
+use App\Http\Controllers\User\QuickActionController;
 use Illuminate\Support\Facades\Route;
 
 // Email verification routes
@@ -173,6 +174,13 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
 
 		// USer to User transfer
 		Route::post('transfertouser', [TransferController::class, 'transfertouser'])->name('transfertouser');
+
+		// Quick banking services
+		Route::get('services/beneficiaries', [QuickActionController::class, 'beneficiaries'])->name('beneficiaries.index');
+		Route::post('services/beneficiaries', [QuickActionController::class, 'storeBeneficiary'])->name('beneficiaries.store');
+		Route::delete('services/beneficiaries/{beneficiary}', [QuickActionController::class, 'destroyBeneficiary'])->name('beneficiaries.destroy');
+		Route::get('services/{service}', [QuickActionController::class, 'service'])->name('quick-actions.service');
+		Route::post('services/{service}', [QuickActionController::class, 'pay'])->name('quick-actions.pay');
 
 		// binance crypto payments routes
 		Route::get('/binance/success', [ViewsController::class, 'binanceSuccess'])->name('bsuccess');

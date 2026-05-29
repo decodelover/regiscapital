@@ -124,6 +124,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Notification::class);
     }
 
+    public function utilityPayments()
+    {
+        return $this->hasMany(UtilityPayment::class);
+    }
+
+    public function beneficiaries()
+    {
+        return $this->hasMany(UserBeneficiary::class);
+    }
+
     /**
      * Get the count of unread notifications for this user.
      *
